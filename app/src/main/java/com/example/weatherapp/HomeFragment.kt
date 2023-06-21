@@ -40,6 +40,7 @@ class HomeFragment : Fragment() {
         val callback = object : WeatherDataCallback {
             override fun onSuccess(weatherData: WeatherData) {
                 setNewTextViews(weatherData)
+                weather = weatherData
             }
 
             override fun onFailure(throwable: Throwable) {

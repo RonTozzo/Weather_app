@@ -18,10 +18,12 @@ class MainActivity : AppCompatActivity(), ConnectivityMonitor.ConnectivityMonito
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+
         connectivityMonitor = ConnectivityMonitor(this, this)
 
         val workRequest = PeriodicWorkRequestBuilder<TemperatureWorker>(
-            1, TimeUnit.MINUTES
+            1, TimeUnit.HOURS
         ).build()
 
         // Enviar o WorkRequest para o WorkManager
